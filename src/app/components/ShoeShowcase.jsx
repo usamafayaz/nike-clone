@@ -72,9 +72,9 @@ const ShoeShowcase = () => {
                 {displayedShoes.map((shoe, index) => (
                   <div
                     key={`${shoe.id}-${index}`}
-                    className="w-[18%] flex-shrink-0 mx-[1%] group"
+                    className="w-[31%] md:w-[18%] flex-shrink-0 mx-[1%] group"
                   >
-                    <div className="relative bg-black h-44 md:h-72 w-28 md:w-56 w overflow-hidden rounded-sm">
+                    <div className="relative bg-black h-44 md:h-72 w-[110px] md:w-56 w overflow-hidden rounded-sm">
                       <div className="transform transition-transform durat1ion-300 ease-in-out group-hover:scale-110 h-full">
                         <Image
                           fill
@@ -84,7 +84,7 @@ const ShoeShowcase = () => {
                         />
                       </div>
                       <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-opacity duration-300" />
-                      <p className="absolute bottom-0 w-full text-white text-lg font-bold p-2 text-center ">
+                      <p className="absolute bottom-0 w-full text-white text-sm md:text-lg font-bold p-2 text-center ">
                         {shoe.name}
                       </p>
                     </div>

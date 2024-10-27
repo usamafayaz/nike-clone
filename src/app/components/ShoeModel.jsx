@@ -18,7 +18,7 @@ const ShoeViewer3D = () => {
     // Scene setup
     const scene = new THREE.Scene();
     sceneRef.current = scene;
-    scene.background = new THREE.Color(0xffffff);
+    scene.background = null;
 
     // Camera setup
     const camera = new THREE.PerspectiveCamera(
@@ -27,11 +27,16 @@ const ShoeViewer3D = () => {
       0.1,
       1000
     );
-    camera.position.set(0, 0, 3); // Changed this value for closer default zoom
+
+    const isMobile = window.innerWidth < 768;
+    camera.position.set(0, 0, isMobile ? 3 : 2.2);
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+    });
     renderer.setSize(
       containerRef.current.clientWidth,
       containerRef.current.clientHeight
@@ -39,26 +44,27 @@ const ShoeViewer3D = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.setClearColor(0x000000, 0);
     rendererRef.current = renderer;
     containerRef.current.appendChild(renderer.domElement);
 
     // Lighting setup
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight);
 
-    const backLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    const backLight = new THREE.DirectionalLight(0xffffff, 0.4);
     backLight.position.set(-5, 5, -5);
     scene.add(backLight);
 
-    // Controls setup with zoom disabled
+    // Controls setup
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
-    controls.enableZoom = false; // Disabled zoom
+    controls.enableZoom = false;
     controls.enablePan = false;
     controlsRef.current = controls;
 
@@ -68,15 +74,13 @@ const ShoeViewer3D = () => {
       "/assets/nike_shoe.glb",
       (gltf) => {
         const model = gltf.scene;
-        // Center the model
         const box = new THREE.Box3().setFromObject(model);
         const center = box.getCenter(new THREE.Vector3());
         model.position.sub(center);
 
-        // Scale the model appropriately
         const size = box.getSize(new THREE.Vector3());
         const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = 2 / maxDim;
+        const scale = 1.8 / maxDim;
         model.scale.multiplyScalar(scale);
 
         scene.add(model);
@@ -106,6 +110,8 @@ const ShoeViewer3D = () => {
       const height = containerRef.current.clientHeight;
 
       camera.aspect = width / height;
+      const isMobile = window.innerWidth < 768;
+      camera.position.z = isMobile ? 2.2 : 2.2;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
     };
@@ -123,24 +129,24 @@ const ShoeViewer3D = () => {
   }, []);
 
   return (
-    <section className="w-full min-h-screen bg-gradient-to-r from-white to-stone-300">
-      <div className="max-w-[1400px] mx-auto px-4 py-20">
+    <section className="w-full bg-gradient-to-r from-white to-stone-300">
+      <div className="max-w-[1400px] mx-auto px-4 py-8">
         {/* Heading Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-6xl font-black mb-4 font-nike bg-clip-text text-transparent bg-gradient-to-r from-black to-stone-600">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-6xl font-black mb-4 font-nike bg-clip-text text-transparent bg-gradient-to-r from-black to-stone-600">
             EXPERIENCE INNOVATION
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
             Explore every detail of our latest designs in immersive 3D. Rotate
             and discover the future of footwear.
           </p>
         </div>
 
         {/* 3D Viewer Container */}
-        <div className="bg-white/80 backdrop-blur-sm shadow-xl rounded-lg">
+        <div className="bg-transparent backdrop-blur-sm shadow-xl rounded-lg pb-20">
           <div
             ref={containerRef}
-            className="aspect-square w-full h-[600px] relative"
+            className="w-full h-[280px] md:h-[350px] relative"
           ></div>
         </div>
       </div>

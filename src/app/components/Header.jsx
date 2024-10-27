@@ -8,7 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white relative">
+    <header className="bg-white  relative">
       <nav className="container mx-auto flex items-center justify-between px-4 py-2">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -126,14 +126,6 @@ const Header = () => {
             >
               <span className="font-medium">Converse</span>
             </Link>
-          </div>
-
-          {/* Membership Text */}
-          <div className="pt-6 text-black text-sm">
-            <p>
-              Become a Nike Member for the best products, inspiration, and
-              stories in sport.
-            </p>
           </div>
         </div>
       </div>
