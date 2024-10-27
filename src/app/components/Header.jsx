@@ -8,14 +8,14 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-gray-200 relative">
-      <nav className="container mx-auto flex items-center justify-between px-4 py-3">
+    <header className="bg-white relative">
+      <nav className="container mx-auto flex items-center justify-between px-4 py-2">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src={"/assets/logo.jpg"}
-            height={80}
-            width={80}
+            height={100}
+            width={100}
             alt="Nike Logo"
           />
         </Link>
@@ -23,7 +23,7 @@ const Header = () => {
         {/* Main Navigation - Desktop */}
         <div className="hidden md:flex items-center space-x-6">
           {[
-            ["New & Featured", "/new"],
+            ["New", "/new"],
             ["Men", "/men"],
             ["Women", "/women"],
             ["Kids", "/kids"],
@@ -33,10 +33,10 @@ const Header = () => {
             <Link
               key={title}
               href={url}
-              className="text-black text-[16px] font-semibold relative group"
+              className="text-black text-[16px] font-semibold relative group font-sans"
             >
               {title}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 ease-out group-hover:w-full" />
             </Link>
           ))}
         </div>
@@ -49,7 +49,7 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search"
-              className="bg-transparent border-none outline-none ml-2 w-40"
+              className="bg-transparent border-none outline-none ml-2 w-40 text-black"
             />
           </div>
 
