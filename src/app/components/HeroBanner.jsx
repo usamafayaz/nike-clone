@@ -1,8 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import Link from "next/link";
 import { Volume2, VolumeX } from "lucide-react";
-import Image from "next/image";
 
 const HeroBanner = () => {
   const videoRef = useRef(null);
