@@ -44,11 +44,11 @@ const HeroBanner = () => {
           <h1 className="font-bold text-[42px] md:text-[80px] leading-none mb-4 font-nike text-black ">
             "I AM THE PRESSURE"
           </h1>
-          <p className="text-lg mb- text-black">
+          <p className="md:text-lg text-black text-sm font-thin md:font-normal">
             LeBron doesn't duck pressure, he becomes it. The LeBron XXII is
             built to bring it.
           </p>
-          <button className="bg-black rounded-full px-5 py-2 mt-8 hover:bg-stone-600">
+          <button className="bg-black rounded-full px-8 py-2 mt-8 hover:bg-stone-600">
             <p className="text-white font-semibold text-md">Explore</p>
           </button>
         </div>
