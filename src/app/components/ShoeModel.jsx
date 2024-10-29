@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { ShoppingCart, RotateCcw, Star } from "lucide-react";
 
 const ShoeViewer3D = () => {
   const containerRef = useRef(null);
@@ -111,7 +112,7 @@ const ShoeViewer3D = () => {
 
       camera.aspect = width / height;
       const isMobile = window.innerWidth < 768;
-      camera.position.z = isMobile ? 2.2 : 2.2;
+      camera.position.z = isMobile ? 2.6 : 2.2;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
     };
@@ -129,28 +130,63 @@ const ShoeViewer3D = () => {
   }, []);
 
   return (
-    <section className="w-full bg-gradient-to-r from-white to-stone-300">
-      <div className="max-w-[1400px] mx-auto px-4 py-8">
-        {/* Heading Section */}
-        <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-6xl font-black mb-4 font-nike bg-clip-text text-transparent bg-gradient-to-r from-black to-stone-600">
-            EXPERIENCE INNOVATION
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore every detail of our latest designs in immersive 3D. Rotate
-            and discover the future of footwear.
-          </p>
-        </div>
+    <div className="w-full relative">
+      {/* Top shadow overlay */}
+      <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-stone-600/10 to-transparent"></div>
 
-        {/* 3D Viewer Container */}
-        <div className="bg-transparent backdrop-blur-sm shadow-xl rounded-lg pb-20">
-          <div
-            ref={containerRef}
-            className="w-full h-[280px] md:h-[350px] relative"
-          ></div>
+      <div className="w-full bg-gradient-to-br from-neutral-50 via-white to-neutral-100">
+        <div className="max-w-[1800px] mx-auto">
+          <div className="flex flex-col md:flex-row">
+            {/* 3D Viewer Side - 65% width */}
+            <div className="w-full md:w-[65%] bg-white backdrop-blur-sm">
+              <div className="h-full">
+                <div
+                  ref={containerRef}
+                  className="w-full h-[400px] md:h-[80vh] relative"
+                ></div>
+              </div>
+            </div>
+
+            {/* Product Details Side - 35% width */}
+            <div className="w-full md:w-[35%] p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-stone-300 via-white to-stone-300">
+              <div className="space-y-8 max-w-xl">
+                {/* Product Title */}
+                <div className="space-y-4">
+                  <h4 className="text-sm font-medium tracking-wider text-gray-800">
+                    NIKE AIR MAX
+                  </h4>
+                  <h1 className="text-5xl md:text-6xl font-bold text-black font-nike">
+                    AIR MAX PLUS
+                  </h1>
+                  <p className="text-lg text-gray-800 font-medium">
+                    Men's Shoes
+                  </p>
+                </div>
+
+                {/* Product Description */}
+                <div className="space-y-6">
+                  <p className="text-base leading-relaxed text-gray-900">
+                    The Nike Air Max Plus brings back the classic design details
+                    you love while adding revolutionary Nike Air technology.
+                    Originally designed for high-mileage runs, the wavy plastic
+                    fingers and gradient colors deliver late '90s vibes for
+                    modern streetwear style.
+                  </p>
+
+                  {/* View Details Link - Nike style */}
+                  <button className="text-base text-black font-medium underline hover:no-underline">
+                    View Product Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+
+      {/* Bottom shadow overlay */}
+      <div className="absolute bottom-0 left-0 right-0 h-5 bg-gradient-to-t from-stone-600/10 to-transparent"></div>
+    </div>
   );
 };
 

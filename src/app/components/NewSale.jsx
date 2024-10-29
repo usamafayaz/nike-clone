@@ -4,7 +4,7 @@ import React from "react";
 const NewSale = () => {
   return (
     <div className="bg-white flex flex-col items-center pt-20">
-      <p className="text-black font-nike text-6xl bg-clip-text">
+      <p className="text-black font-nike text-5xl md:text-6xl bg-clip-text p-2">
         NEW THIS WEEK
       </p>
       <p className="text-black font-normal text-lg bg-clip-text mt-2">

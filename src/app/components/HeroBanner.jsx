@@ -32,7 +32,7 @@ const HeroBanner = () => {
         {/* Mute/Unmute Button */}
         <button
           onClick={toggleMute}
-          className="absolute bottom-[48%] left-4 z-20 p-2 bg-black/50 rounded-full text-white hover:bg-black/70"
+          className="relative bottom-[15%] left-4 z-20 p-2 bg-black/50 rounded-full text-white hover:bg-black/70"
         >
           {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
         </button>
@@ -44,7 +44,7 @@ const HeroBanner = () => {
           <h1 className="font-bold text-[42px] md:text-[80px] leading-none mb-4 font-nike text-black ">
             "I AM THE PRESSURE"
           </h1>
-          <p className="md:text-lg text-black text-sm font-thin md:font-normal">
+          <p className="md:text-lg text-black text-sm  font-normal">
             LeBron doesn't duck pressure, he becomes it. The LeBron XXII is
             built to bring it.
           </p>

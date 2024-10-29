@@ -33,7 +33,7 @@ const Header = () => {
             <Link
               key={title}
               href={url}
-              className="text-black text-[16px] font-semibold relative group font-sans"
+              className="text-black text-[16px] font-medium relative group"
             >
               {title}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 ease-out group-hover:w-full" />
@@ -60,7 +60,7 @@ const Header = () => {
 
           {/* Favorites */}
           <button>
-            <Heart className="w-6 h-6 text-black" />
+            <Heart className="w-6 h-6 text-black hover:text-red-600 hover:fill-red-600" />
           </button>
 
           {/* Shopping Bag */}

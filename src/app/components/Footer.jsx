@@ -45,7 +45,7 @@ const Footer = () => {
       </div>
       {/* Footer Links */}
       <div className="max-w-[1400px] mx-auto px-4 py-4">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-start gap-4 md:gap-6 text-[12px] text-gray-500">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-4 md:gap-6 text-[12px] text-gray-500">
           <p className="text-center md:text-left">
             © 2024 Nike, Inc. All Rights Reserved
           </p>
@@ -62,8 +62,8 @@ const Footer = () => {
                   d="M2.5 4.5L6 8L9.5 4.5"
                   stroke="currentColor"
                   strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  strokeLinecap="square"
+                  strokeLinejoin="square"
                 />
               </svg>
             </button>
