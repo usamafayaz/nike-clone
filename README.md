@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NikeClone
+
+A visually stunning and responsive **NikeClone** website built using **Next.js**, **Tailwind CSS**, and **Three.js**. This project replicates key elements of the Nike website, including a sleek navigation bar, video banners, and dynamic 3D models for enhanced product interactivity.
+
+## Features
+
+- **Responsive Design**: Fully optimized for all device sizes using Tailwind CSS.
+- **Dynamic Components**: Features video banners, interactive product categories, and 3D models.
+- **3D Product Views**: Enables users to rotate products with Three.js, adding an immersive shopping experience.
+- **Drawer Navigation**: Drawer menu slides small screens and mobile phones.
+- **Modern UI**: Clean and user-friendly interface inspired by Nike's design aesthetics.
+
+## Technologies Used
+
+- **Next.js**: For server-side rendering and seamless routing.
+- **Tailwind CSS**: For fast and efficient styling.
+- **Three.js**: For rendering and controlling 3D models in the product view.
+- **React Icons**: Provides icons for UI components.
 
 ## Getting Started
 
-First, run the development server:
+### Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/usamafayyaz/nikeclone.git
+   ``
+2. Navigate to the project directory:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   cd nikeclone
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Install the dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+4. Run the development server:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open your browser and visit `http://localhost:3000` to view the website.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Live Demo
 
-## Deploy on Vercel
+You can see its demo; it is deployed at this link:
+https://nike-clone-gray.vercel.app/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For any inquiries or support, please contact [usama.fayyaz157@gmail.com].
