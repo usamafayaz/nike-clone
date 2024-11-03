@@ -23,12 +23,12 @@ A visually stunning and responsive **NikeClone** website built using **Next.js**
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/usamafayyaz/nikeclone.git
+   git clone https://github.com/usamafayyaz/nike-clone.git
    ```
 2. Navigate to the project directory:
 
    ```bash
-   cd nikeclone
+   cd nike-clone
    ```
 
 3. Install the dependencies:
