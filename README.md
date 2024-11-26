@@ -1,6 +1,6 @@
-# NikeClone
+# Nike Clone
 
-A visually stunning and responsive **NikeClone** website built using **Next.js**, **Tailwind CSS**, and **Three.js**. This project replicates key elements of the Nike website, including a sleek navigation bar, video banners, and dynamic 3D models for enhanced product interactivity.
+A visually stunning and responsive **Nike Clone** website built using **Next.js**, **Tailwind CSS**, and **Three.js**. This project replicates key elements of the Nike website, including a sleek navigation bar, video banners, and dynamic 3D models for enhanced product interactivity.
 
 ## Features
 
@@ -23,12 +23,12 @@ A visually stunning and responsive **NikeClone** website built using **Next.js**
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/usamafayyaz/nikeclone.git
+   git clone https://github.com/usamafayyaz/nike-clone.git
    ```
 2. Navigate to the project directory:
 
    ```bash
-   cd nikeclone
+   cd nike-clone
    ```
 
 3. Install the dependencies:
